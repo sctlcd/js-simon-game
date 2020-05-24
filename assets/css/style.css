@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  background-color: darkgrey;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 40px;
+  font-size: 52px;
+}
+
+.color-panel {
+  margin: 0 auto;
+  margin-top: 70px;
+  boder: solid 10px black;
+  width: 800px;
+  height: 800px;
+  border-radius: 800px;
+  /* box-shadow: -10px 10px 7px 0px rgba(50, 50, 50, 0.75); */
+}
+
+.quarter-circle {
+  margin: 0;
+  float: left;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  z-index: 8;
+  border: 5px solid black;
+}
+
+.top-right-quarter-circle {
+  background-color: blue;
+    /* -moz-border-radius: 300px 0 0 0; */
+  border-radius: 400px 0 0 0;
+}
+
+.bottom-right-quarter-circle {
+  background-color: yellow;
+    /* -moz-border-radius: 300px 0 0 0; */
+  border-radius: 0 400px 0 0;
+}
+
+.bottom-left-quarter-circle {
+  background-color: red;
+    /* -moz-border-radius: 300px 0 0 0; */
+  border-radius: 0 0 0 400px;
+}
+
+.top-left-quarter-circle {
+  background-color: green;
+    /* -moz-border-radius: 300px 0 0 0; */
+  border-radius: 0 0 400px 0;
+}
+
+.control-panel {
+  border: 15px solid black;
+  height: 380px;
+  width: 380px;
+  border-radius: 200px;
+  background-color: #fafafa;
+  position: absolute;
+  z-index: 10;
+  margin-top: 160px;
+  margin-left: 160px;
+  /* -webkit-box-shadow: -6px 8px 5px 0px rgba(50, 50, 50, 0.75); */
+}
+
+.title {
+  font-size: 45px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.count {
+  border: solid 2px black;
+  border-radius: 10px;
+  color: #fafafa;
+  width: 60px;
+  height: 45px;
+  font-size: 30px;
+  background-color: yellowgreen;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.start, .strict {
+  text-align: center;
+  margin: 0px;
+  border: solid 3px black;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  color: black;
+  margin-left: 20px;
+  line-height: 70px;
+}
+
+.start {
+  background-color: orange;
+}
+
+.strict {
+  background-color: cyan;
+}
+
+.switch-container {
+  margin-top: 40px;
+}
+
+.outter-switch {
+  border: solid 2px black;
+  width: 60px;
+  height: 30px;
+  background-color: black;
+}
+
+.inner-switch {
+  background-color: grey;
+  width: 30px;
+  height: 26px;
+}
