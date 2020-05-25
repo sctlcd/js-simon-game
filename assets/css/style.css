@@ -36,25 +36,25 @@ h1 {
   border: 5px solid black;
 }
 
-.top-right-quarter-circle {
+.top-right {
   background-color: blue;
     /* -moz-border-radius: 300px 0 0 0; */
   border-radius: 400px 0 0 0;
 }
 
-.bottom-right-quarter-circle {
+.bottom-right {
   background-color: yellow;
     /* -moz-border-radius: 300px 0 0 0; */
   border-radius: 0 400px 0 0;
 }
 
-.bottom-left-quarter-circle {
+.bottom-left {
   background-color: red;
     /* -moz-border-radius: 300px 0 0 0; */
   border-radius: 0 0 0 400px;
 }
 
-.top-left-quarter-circle {
+.top-left {
   background-color: green;
     /* -moz-border-radius: 300px 0 0 0; */
   border-radius: 0 0 400px 0;
@@ -76,7 +76,7 @@ h1 {
 .title {
   font-size: 45px;
   margin-top: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
@@ -88,6 +88,7 @@ h1 {
   height: 45px;
   font-size: 30px;
   background-color: yellowgreen;
+  margin: 0 auto;
 }
 
 .inline {
@@ -95,39 +96,34 @@ h1 {
   vertical-align: middle;
 }
 
-.start, .strict {
+.uppercase {
+  text-transform: uppercase;
+}
+
+.start {
   text-align: center;
   margin: 0px;
   border: solid 3px black;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50px;
   color: black;
-  margin-left: 20px;
-  line-height: 70px;
+  line-height: 50px;
 }
 
 .start {
   background-color: orange;
 }
 
-.strict {
-  background-color: cyan;
-}
-
-.switch-container {
-  margin-top: 40px;
-}
-
-.outter-switch {
-  border: solid 2px black;
-  width: 60px;
-  height: 30px;
-  background-color: black;
-}
-
-.inner-switch {
-  background-color: grey;
+.strict, .on {
+  text-align: center;
+  margin: 0px;
+  border: solid 3px black;
   width: 30px;
-  height: 26px;
+  height: 30px;
+  color: black;
+}
+
+.switch-margin{
+  margin-right: 120px;
 }

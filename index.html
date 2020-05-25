@@ -16,23 +16,32 @@
     </div>
     <div>
       <div class="color-panel">
-        <div class="quarter-circle top-right-quarter-circle">
+        <div class="quarter-circle top-right">
         </div>
-        <div class="quarter-circle bottom-right-quarter-circle">
+        <div class="quarter-circle bottom-right">
         </div>
-        <div class="quarter-circle bottom-left-quarter-circle">
+        <div class="quarter-circle bottom-left">
         </div>
-        <div class="quarter-circle top-left-quarter-circle">
+        <div class="quarter-circle top-left">
         </div>
         <div class="control-panel">
           <div class="title">SIMON</div>
-          <div class="count inline">00</div>
-          <div class="start inline">START</div>
-          <div class="strict inline">STRICT</div>
+          <div class="uppercase">
+            <div class="count" id="count"></div>
+            <h6>count<h6>
+          </div>
           <div class="switch-container">
-           <p class="off inline">OFF</p>
-           <div class="outter-switch inline"><div class="inner-switch"></div></div>
-           <p class="on inline">ON</p>
+            <div class="inline uppercase switch-margin">
+              <input type="checkbox" class="on" id="on">
+              <h6>on</h6>
+            </div>
+            <div class="inline uppercase">
+              <input type="checkbox" class="strict" id="strict">
+              <h6>strict</h6>
+            </div>
+          </div>
+          <div class="inline uppercase">
+              <button class="button start" id="start">start</button>
           </div>
         </div>
       </div>
