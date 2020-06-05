@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-  const topRight = document.querySelector('.top-right');
-  const bottomRight = document.querySelector('.bottom-right');
-  const bottomLeft = document.querySelector('.bottom-left');
-  const topLeft = document.querySelector('.top-left');
+  const topRight = document.getElementById('topRight');
+  const bottomRight = document.getElementById('bottomRight');
+  const bottomLeft = document.getElementById('bottomLeft');
+  const topLeft = document.getElementById('topLeft');
   const countButton = document.querySelector('#count');
   const startButton = document.querySelector('#start');
   const strictButton = document.querySelector('#strict');
@@ -18,16 +18,22 @@ $(document).ready(function() {
     strict: false,
     on: false,
     level: 0,
-    gameSeq: [],
-    playerSeq: [],
+    gameSequence: [],
+    playerSequence: [],
     flash: 0,
     computerRound: false,
     mute: false,
+    win: false,
 
     init: function() {
+      topRight.addEventListener('click', game.topRightSelection);
+      topLeft.addEventListener('click', game.topLeftSelection);
+      bottomRight.addEventListener('click', game.bottomRightSelection);
+      bottomLeft.addEventListener('click', game.bottomLeftSelection);
       strictButton.addEventListener('click', game.strictButtonSelection);
       onButton.addEventListener('click', game.onButtonSelection);
       startButton.addEventListener('click', game.startButtonSelection);
+
       console.log("game.on: " + game.on);
       console.log("game.level: " + game.level);
     },
@@ -68,21 +74,22 @@ $(document).ready(function() {
       game.level++;
       countButton.innerHTML = game.level;
       game.flash = 0;
+      game.win = false;
 
       for (let i = 0; i < 20; i++) {
         random = Math.floor(Math.random() * 4) + 1
-        game.gameSeq.push(random);
+        game.gameSequence.push(random);
       }
 
       game.computerRound = true;
       intervalId = setInterval(game.gameRound, 1000);
-      console.log("game.gameSeq: " + game.gameSeq);
+      console.log("game.gameSequence: " + game.gameSequence);
       console.log("game.level: " + game.level);
     },
 
     // Reset the game
     resetGame: function() {
-      game.gameSeq = [];
+      game.gameSequence = [];
       game.playerSeq = [];
       game.level = 0;
     },
@@ -91,26 +98,29 @@ $(document).ready(function() {
     gameRound: function() {
       console.log("game.flash: " + game.flash);
       console.log("game.level: " + game.level);
+
+      game.on = false;
       if (game.flash === game.level){
         clearInterval(intervalId);
-        game.clearColor();
         game.computerRound = false;
+        game.clearColor();
+        game.on = true;
         console.log("game.computerRound :" + game.computerRound);
       }
 
       if (game.computerRound){
         setTimeout( () => {
           console.log("game.computerRound :" + game.computerRound);
-          if (game.gameSeq[game.flash] === 1) game.one();
-          if (game.gameSeq[game.flash] === 2) game.two();
-          if (game.gameSeq[game.flash] === 3) game.three();
-          if (game.gameSeq[game.flash] === 4) game.four();
+          if (game.gameSequence[game.flash] === 1) game.one();
+          if (game.gameSequence[game.flash] === 2) game.two();
+          if (game.gameSequence[game.flash] === 3) game.three();
+          if (game.gameSequence[game.flash] === 4) game.four();
           game.flash++;
         }, 200);
       }
     },
 
-      // Light and sound 1 in the game Sequence
+      // Light and sound if 1 in the game Sequence
       one: function() {
         if (!game.mute) {
           sound1.play();
@@ -148,7 +158,8 @@ $(document).ready(function() {
         bottomRight.style.backgroundColor = "yellow";
         bottomLeft.style.backgroundColor = "red";
         topLeft.style.backgroundColor = "green";
-      }
+      },
+
     }
 
   game.init();

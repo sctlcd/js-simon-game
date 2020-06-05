@@ -37,22 +37,22 @@ h1 {
 
 .top-right {
   background-color: blue;
-  border-radius: 400px 0 0 0;
+  border-radius: 0 400px 0 0;
 }
 
 .bottom-right {
   background-color: yellow;
-  border-radius: 0 400px 0 0;
+  border-radius: 0 0 0 400px;
 }
 
 .bottom-left {
   background-color: red;
-  border-radius: 0 0 0 400px;
+  border-radius: 0 0 400px 0;
 }
 
 .top-left {
   background-color: green;
-  border-radius: 0 0 400px 0;
+  border-radius: 400px 0 0 0;
 }
 
 .control-panel {
