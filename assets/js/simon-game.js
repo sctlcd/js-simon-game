@@ -26,16 +26,71 @@ $(document).ready(function() {
     win: false,
 
     init: function() {
+      // topRight.addEventListener('click', (event) => {
+      // });
+
       topRight.addEventListener('click', game.topRightSelection);
-      topLeft.addEventListener('click', game.topLeftSelection);
       bottomRight.addEventListener('click', game.bottomRightSelection);
       bottomLeft.addEventListener('click', game.bottomLeftSelection);
+      topLeft.addEventListener('click', game.topLeftSelection);
       strictButton.addEventListener('click', game.strictButtonSelection);
       onButton.addEventListener('click', game.onButtonSelection);
       startButton.addEventListener('click', game.startButtonSelection);
 
       console.log("game.on: " + game.on);
       console.log("game.level: " + game.level);
+    },
+
+    // Event listener topRight selection
+    topRightSelection: function() {
+      if (game.on) {
+        game.playerSequence.push(1)
+        game.one();
+        if (!win) {
+          setTimeout(() => {
+            clearColor;
+          }, 300);
+        }
+      }
+    },
+
+    // Event listener bottomRight selection
+    bottomRightSelection: function() {
+      if (game.on) {
+        game.playerSequence.push(2)
+        game.two();
+        if (!win) {
+          setTimeout(() => {
+            clearColor;
+          }, 300);
+        }
+      }
+    },
+
+    // Event listener bottomLeft selection
+    bottomLeftSelection: function() {
+      if (game.on) {
+        game.playerSequence.push(3)
+        game.three();
+        if (!win) {
+          setTimeout(() => {
+            clearColor;
+          }, 300);
+        }
+      }
+    },
+
+    // Event listener topLeft selection
+    topLeftSelection: function() {
+      if (game.on) {
+        game.playerSequence.push(4)
+        game.four();
+        if (!win) {
+          setTimeout(() => {
+            clearColor;
+          }, 300);
+        }
+      }
     },
 
     // Event listener onButton selection
