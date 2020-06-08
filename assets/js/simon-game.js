@@ -37,9 +37,6 @@ $(document).ready(function() {
       strictButton.addEventListener('click', game.strictButtonSelection);
       onButton.addEventListener('click', game.onButtonSelection);
       startButton.addEventListener('click', game.startButtonSelection);
-
-      console.log("game.on: " + game.on);
-      console.log("game.level: " + game.level);
     },
 
     // Event listener topRight selection
@@ -103,7 +100,6 @@ $(document).ready(function() {
       if (onButton.checked === true) {
         game.on = true;
         countButton.innerHTML = "0";
-        console.log("game.on: " + game.on);
       } else {
         game.on = false;
         countButton.innerHTML = "";
@@ -123,7 +119,7 @@ $(document).ready(function() {
 
     // Event listener startButton selection
     startButtonSelection: function() {
-      if (game.on === true) {
+      if (game.on || game.win) {
         game.play();
       }
     },
@@ -157,8 +153,6 @@ $(document).ready(function() {
 
     // Instructions if computer round or player round
     gameRound: function() {
-      console.log("game.flash: " + game.flash);
-      console.log("game.level: " + game.level);
 
       game.on = false;
       if (game.flash === game.level){
@@ -166,13 +160,11 @@ $(document).ready(function() {
         game.computerRound = false;
         game.clearColor();
         game.on = true;
-        console.log("game.computerRound :" + game.computerRound);
       }
 
       if (game.computerRound){
         game.clearColor();
         setTimeout( () => {
-          console.log("game.computerRound :" + game.computerRound);
           if (game.gameSequence[game.flash] === 1) game.one();
           if (game.gameSequence[game.flash] === 2) game.two();
           if (game.gameSequence[game.flash] === 3) game.three();
@@ -239,9 +231,12 @@ $(document).ready(function() {
           console.log("game.flash: " + game.flash);
           console.log("game.gameSequence[game.playerSequence.length - 1]: " + game.gameSequence[game.playerSequence.length - 1]);
           console.log("game.playerSequence[game.playerSequence.length - 1 ]: " + game.playerSequence[game.playerSequence.length - 1 ]);
+          console.log("game.playerSequence.length: " + game.playerSequence.length)
 
-        if (game.playerSequence == 3 && matched)
-        game.winGame();
+        if (game.playerSequence.length === 3 && game.matched) {
+          console.log("game.win:" + game.win);
+          game.winGame();
+        }
 
         if (game.matched === false) {
           game.flashColor();
@@ -251,6 +246,7 @@ $(document).ready(function() {
             game.clearColor();
           }, 800)
           game.mute = true;
+        }
 
           if (game.level === game.playerSequence.length && game.matched && !game.win) {
             game.level++;
@@ -258,14 +254,17 @@ $(document).ready(function() {
             game.computerRound = true;
             game.flash = 0;
             countButton.innerHTML = game.level;
-            intervalId =setInterval(game.gameRound, 800);
+            intervalId = setInterval(game.gameRound, 800);
+            console.log("game.playerSequence: " + game.playerSequence)
+            console.log("game.playerSequence.length:" + game.playerSequence.length);
+            console.log("game.computerRound:" + game.computerRound);
+
           }
-        }
       },
 
       winGame: function() {
         game.flashColor();
-        game.countButton.innerHTML = "WIN!";
+        countButton.innerHTML = "WIN!";
         game.on = false;
         game.win = true;
       },
