@@ -36,22 +36,22 @@ h1 {
 }
 
 .top-right {
-  background-color: blue;
+  background-color: darkblue;
   border-radius: 0 400px 0 0;
 }
 
 .bottom-right {
-  background-color: yellow;
-  border-radius: 0 0 0 400px;
-}
-
-.bottom-left {
-  background-color: red;
+  background-color: goldenrod;
   border-radius: 0 0 400px 0;
 }
 
+.bottom-left {
+  background-color: darkred;
+  border-radius: 0 0 0 400px;
+}
+
 .top-left {
-  background-color: green;
+  background-color: darkgreen;
   border-radius: 400px 0 0 0;
 }
 

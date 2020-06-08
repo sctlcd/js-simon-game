@@ -24,6 +24,7 @@ $(document).ready(function() {
     computerRound: false,
     mute: false,
     win: false,
+    matched: false,
 
     init: function() {
       // topRight.addEventListener('click', (event) => {
@@ -44,11 +45,12 @@ $(document).ready(function() {
     // Event listener topRight selection
     topRightSelection: function() {
       if (game.on) {
-        game.playerSequence.push(1)
+        game.playerSequence.push(1);
+        game.checkForMatch();
         game.one();
-        if (!win) {
+        if (!game.win) {
           setTimeout(() => {
-            clearColor;
+            game.clearColor;
           }, 300);
         }
       }
@@ -57,11 +59,12 @@ $(document).ready(function() {
     // Event listener bottomRight selection
     bottomRightSelection: function() {
       if (game.on) {
-        game.playerSequence.push(2)
+        game.playerSequence.push(2);
+        game.checkForMatch();
         game.two();
-        if (!win) {
+        if (!game.win) {
           setTimeout(() => {
-            clearColor;
+            game.clearColor;
           }, 300);
         }
       }
@@ -70,11 +73,12 @@ $(document).ready(function() {
     // Event listener bottomLeft selection
     bottomLeftSelection: function() {
       if (game.on) {
-        game.playerSequence.push(3)
+        game.playerSequence.push(3);
+        game.checkForMatch();
         game.three();
-        if (!win) {
+        if (!game.win) {
           setTimeout(() => {
-            clearColor;
+            game.clearColor;
           }, 300);
         }
       }
@@ -83,11 +87,12 @@ $(document).ready(function() {
     // Event listener topLeft selection
     topLeftSelection: function() {
       if (game.on) {
-        game.playerSequence.push(4)
+        game.playerSequence.push(4);
+        game.checkForMatch();
         game.four();
-        if (!win) {
+        if (!game.win) {
           setTimeout(() => {
-            clearColor;
+            game.clearColor;
           }, 300);
         }
       }
@@ -130,6 +135,7 @@ $(document).ready(function() {
       countButton.innerHTML = game.level;
       game.flash = 0;
       game.win = false;
+      game.matched = true;
 
       for (let i = 0; i < 20; i++) {
         random = Math.floor(Math.random() * 4) + 1
@@ -164,6 +170,7 @@ $(document).ready(function() {
       }
 
       if (game.computerRound){
+        game.clearColor();
         setTimeout( () => {
           console.log("game.computerRound :" + game.computerRound);
           if (game.gameSequence[game.flash] === 1) game.one();
@@ -181,7 +188,7 @@ $(document).ready(function() {
           sound1.play();
         }
         game.mute = false;
-        topRight.style.backgroundColor = "lightblue";
+        topRight.style.backgroundColor = "blue";
       },
 
       two: function() {
@@ -189,7 +196,7 @@ $(document).ready(function() {
           sound2.play();
         }
         game.mute = false;
-        bottomRight.style.backgroundColor = "lightyellow";
+        bottomRight.style.backgroundColor = "yellow";
       },
 
       three: function() {
@@ -197,7 +204,7 @@ $(document).ready(function() {
           sound3.play();
         }
         game.mute = false;
-        bottomLeft.style.backgroundColor = "salmon";
+        bottomLeft.style.backgroundColor = "red";
       },
 
       four: function() {
@@ -205,15 +212,64 @@ $(document).ready(function() {
           sound4.play();
         }
         game.mute = false;
-        topLeft.style.backgroundColor = "lightGreen";
+        topLeft.style.backgroundColor = "green";
       },
 
       clearColor: function() {
+        topRight.style.backgroundColor = "darkblue";
+        bottomRight.style.backgroundColor = "goldenrod";
+        bottomLeft.style.backgroundColor = "darkred";
+        topLeft.style.backgroundColor = "darkgreen";
+      },
+
+      flashColor: function() {
         topRight.style.backgroundColor = "blue";
         bottomRight.style.backgroundColor = "yellow";
         bottomLeft.style.backgroundColor = "red";
         topLeft.style.backgroundColor = "green";
       },
+
+      //
+      // matched is true is the player has everything correct and false if the player selected something wrong
+      checkForMatch: function() {
+        if (game.gameSequence[game.playerSequence.length - 1] !== game.playerSequence[game.playerSequence.length - 1 ]){
+          game.matched = false;
+        }
+          console.log("game.matched: " + game.matched);
+          console.log("game.flash: " + game.flash);
+          console.log("game.gameSequence[game.playerSequence.length - 1]: " + game.gameSequence[game.playerSequence.length - 1]);
+          console.log("game.playerSequence[game.playerSequence.length - 1 ]: " + game.playerSequence[game.playerSequence.length - 1 ]);
+
+        if (game.playerSequence == 3 && matched)
+        game.winGame();
+
+        if (game.matched === false) {
+          game.flashColor();
+          countButton.innerHTML= "NO";
+          setTimeout( () => {
+            countButton.innerHTML = game.level;
+            game.clearColor();
+          }, 800)
+          game.mute = true;
+
+          if (game.level === game.playerSequence.length && game.matched && !game.win) {
+            game.level++;
+            game.playerSequence = [];
+            game.computerRound = true;
+            game.flash = 0;
+            countButton.innerHTML = game.level;
+            intervalId =setInterval(game.gameRound, 800);
+          }
+        }
+      },
+
+      winGame: function() {
+        game.flashColor();
+        game.countButton.innerHTML = "WIN!";
+        game.on = false;
+        game.win = true;
+      },
+
 
     }
 
