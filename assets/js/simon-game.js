@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  const title = document.querySelector('.title');
   const topRight = document.getElementById('topRight');
   const bottomRight = document.getElementById('bottomRight');
   const bottomLeft = document.getElementById('bottomLeft');
@@ -27,16 +28,15 @@ $(document).ready(function() {
     matched: false,
 
     init: function() {
-      // topRight.addEventListener('click', (event) => {
-      // });
-
-      topRight.addEventListener('click', game.topRightSelection);
-      bottomRight.addEventListener('click', game.bottomRightSelection);
-      bottomLeft.addEventListener('click', game.bottomLeftSelection);
-      topLeft.addEventListener('click', game.topLeftSelection);
-      strictButton.addEventListener('click', game.strictButtonSelection);
-      onButton.addEventListener('click', game.onButtonSelection);
-      startButton.addEventListener('click', game.startButtonSelection);
+      title.innerHTML = "SIMON";
+      startButton.innerHTML = "START";
+      topRight.addEventListener("click", game.topRightSelection);
+      bottomRight.addEventListener("click", game.bottomRightSelection);
+      bottomLeft.addEventListener("click", game.bottomLeftSelection);
+      topLeft.addEventListener("click", game.topLeftSelection);
+      strictButton.addEventListener("click", game.strictButtonSelection);
+      onButton.addEventListener("click", game.onButtonSelection);
+      startButton.addEventListener("click", game.startButtonSelection);
     },
 
     // Event listener topRight selection
@@ -240,7 +240,7 @@ $(document).ready(function() {
 
         if (game.matched === false) {
           game.flashColor();
-          countButton.innerHTML= "NO";
+          countButton.innerHTML= "NO :(";
           setTimeout( () => {
             countButton.innerHTML = game.level;
             game.clearColor();
@@ -268,8 +268,6 @@ $(document).ready(function() {
         game.on = false;
         game.win = true;
       },
-
-
     }
 
   game.init();
