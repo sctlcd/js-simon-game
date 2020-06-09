@@ -7,25 +7,34 @@
   <title>Simon game</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+  <audio id="sound1">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+  </audio>
+  <audio id="sound2">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+  </audio>
+  <audio id="sound3">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+  </audio>
+  <audio id="sound4">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+  </audio>
 </head>
 
 <body>
   <div class="container">
-    <div class="header">
-      <h1>Welcome to my Simon Game!</h1>
-    </div>
-    <div>
       <div class="color-panel">
-        <div class="quarter-circle top-right">
+        <div id="topLeft" class="quarter-circle top-left">
         </div>
-        <div class="quarter-circle bottom-right">
+        <div id="topRight" class="quarter-circle top-right">
+      </div>
+        <div id="bottomLeft" class="quarter-circle bottom-left">
         </div>
-        <div class="quarter-circle bottom-left">
-        </div>
-        <div class="quarter-circle top-left">
+        <div id="bottomRight" class="quarter-circle bottom-right">
         </div>
         <div class="control-panel">
-          <div class="title">SIMON</div>
+          <div class="title"></div>
           <div class="uppercase">
             <div class="count" id="count"></div>
             <h6>count<h6>
@@ -41,12 +50,16 @@
             </div>
           </div>
           <div class="inline uppercase">
-              <button class="button start" id="start">start</button>
+            <button class="button start" id="start"></button>
           </div>
         </div>
       </div>
-    </div>
   </div>
+
+  <!-- script -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="assets/js/simon-game.js"></script>
+
 </body>
 
 </html>
