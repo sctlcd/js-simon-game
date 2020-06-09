@@ -97,7 +97,7 @@ $(document).ready(function() {
 
     // Event listener onButton selection
     onButtonSelection: function() {
-      if (onButton.checked === true) {
+      if (onButton.checked) {
         game.on = true;
         countButton.innerHTML = "0";
       } else {
@@ -110,7 +110,7 @@ $(document).ready(function() {
 
     // Event listener strictButton selection
     strictButtonSelection: function() {
-      if (strictButton.checked === true) {
+      if (strictButton.checked) {
         game.strict = true;
       } else {
         game.strict = false;
@@ -139,15 +139,13 @@ $(document).ready(function() {
       }
 
       game.computerRound = true;
-      intervalId = setInterval(game.gameRound, 1000);
-      console.log("game.gameSequence: " + game.gameSequence);
-      console.log("game.level: " + game.level);
+      intervalId = setInterval(game.gameRound, 800);
     },
 
     // Reset the game
     resetGame: function() {
       game.gameSequence = [];
-      game.playerSeq = [];
+      game.playerSequence = [];
       game.level = 0;
     },
 
@@ -227,14 +225,8 @@ $(document).ready(function() {
         if (game.gameSequence[game.playerSequence.length - 1] !== game.playerSequence[game.playerSequence.length - 1 ]){
           game.matched = false;
         }
-          console.log("game.matched: " + game.matched);
-          console.log("game.flash: " + game.flash);
-          console.log("game.gameSequence[game.playerSequence.length - 1]: " + game.gameSequence[game.playerSequence.length - 1]);
-          console.log("game.playerSequence[game.playerSequence.length - 1 ]: " + game.playerSequence[game.playerSequence.length - 1 ]);
-          console.log("game.playerSequence.length: " + game.playerSequence.length)
 
         if (game.playerSequence.length === 3 && game.matched) {
-          console.log("game.win:" + game.win);
           game.winGame();
         }
 
@@ -244,7 +236,19 @@ $(document).ready(function() {
           setTimeout( () => {
             countButton.innerHTML = game.level;
             game.clearColor();
+
+            if (game.strict) {
+              game.play();
+            } else {
+              game.playerSequence = [];
+              game.computerRound = true;
+              game.matched = true;
+              game.flash = 0;
+              countButton.innerHTML = game.level;
+              intervalId = setInterval( game.gameRound, 800);
+            }
           }, 800)
+
           game.mute = true;
         }
 
@@ -255,16 +259,20 @@ $(document).ready(function() {
             game.flash = 0;
             countButton.innerHTML = game.level;
             intervalId = setInterval(game.gameRound, 800);
-            console.log("game.playerSequence: " + game.playerSequence)
-            console.log("game.playerSequence.length:" + game.playerSequence.length);
-            console.log("game.computerRound:" + game.computerRound);
-
           }
+      },
+
+      playComputerSequence: function() {
+        game.playerSequence = [];
+        game.computerRound = true;
+        game.flash = 0;
+        countButton.innerHTML = game.level;
+        intervalId = setInterval(game.gameRound, 800);
       },
 
       winGame: function() {
         game.flashColor();
-        countButton.innerHTML = "WIN!";
+        countButton.innerHTML = "WIN :)";
         game.on = false;
         game.win = true;
       },
