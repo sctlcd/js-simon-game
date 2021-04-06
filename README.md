@@ -9,20 +9,27 @@
 
 # Table of Contents <a name="TableOfContents"></a>
 
-1. [Technologies Used](#TechnologiesUsed)
+1. [About](#About)
+
+2. [Technologies Used](#TechnologiesUsed)
 
 	- [Front-End Technologies](#Front-end-technologies)
 
-2. [Deployment](#Deployment)
+3. [Deployment](#Deployment)
 
 	- [Deployment – Live website](#Deploymentlivewebsite)
 	- [Deployment – Run locally](#Deploymentrunlocally)
 
-3. [Credits](#Credits)
+4. [Credits](#Credits)
 
 	- [Media](#Media)
 
 ---
+
+## About <a name="About"></a>
+
+Desktop version of Simon game.
+
 ## Technologies Used <a name="TechnologiesUsed"></a>
 
 - [GitHub](https://github.com/) - Used as remote storage of my code online.
