@@ -1,13 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-body {
+* {
+  box-sizing: border-box;
   font-family: 'Permanent Marker', cursive;
-  color: black;
-  background-color: black;
-  margin: auto;
 }
 
-.container {
+html,
+body {
+  height: 100vh;
+  color: black;
+  background-color: black;
+  margin: 0 auto;
+}
+
+/* --------------------------------------- wrappers */
+.page-wrapper {
+  min-height: 100%;
+  margin-bottom: -3rem;
+}
+
+.init-wrapper {
+  height: 100vh;
+  /* This part is important for centering the content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* End center */
+}
+
+/* --------------------------------------- game content */
+.container-game {
   margin: auto;
   text-align: center;
 }
@@ -32,22 +54,22 @@ body {
 }
 
 .top-right {
-  background-color: darkblue;
+  background-color: #00006e;
   border-radius: 0 400px 0 0;
 }
 
 .bottom-right {
-  background-color: goldenrod;
+  background-color: #a37400;
   border-radius: 0 0 400px 0;
 }
 
 .bottom-left {
-  background-color: darkred;
+  background-color: #6c0101;
   border-radius: 0 0 0 400px;
 }
 
 .top-left {
-  background-color: darkgreen;
+  background-color: #005900;
   border-radius: 400px 0 0 0;
 }
 
@@ -66,9 +88,13 @@ body {
 
 .title {
   font-size: 45px;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-weight: bold;
+}
+
+.switch-container {
+  margin: 15px auto;
 }
 
 .count {
@@ -103,10 +129,10 @@ body {
 }
 
 .start {
-  background-color: red;
+  background-color: #bb0a0a;
 }
 
-.strict, .on {
+.strict, .on, .mute {
   text-align: center;
   margin: 0px;
   border: solid 3px black;
@@ -115,6 +141,33 @@ body {
   color: black;
 }
 
-.switch-margin{
-  margin-right: 120px;
+.switch-margin {
+  margin-right: 45px;
+}
+
+/* --------------------------------------- footer */
+footer {
+  background-color: rgba(248, 249, 250, 0.1);
+  color: #cbcbcb;
+  margin: 0 auto;
+  width: 100%;
+  bottom: 0;
+}
+
+footer,
+.push {
+  height: 3rem;
+}
+
+footer p {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+footer a {
+  color: #cbcbcb;
+}
+
+footer a:hover {
+  color: #daa520;
 }

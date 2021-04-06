@@ -10,54 +10,81 @@
   <link rel="shortcut icon" type="image/png" href="assets/images/favicon.ico" />
 
   <audio id="sound1">
-  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+    <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3">
+    </source>
   </audio>
   <audio id="sound2">
-  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+    <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3">
+    </source>
   </audio>
   <audio id="sound3">
-  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+    <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3">
+    </source>
   </audio>
   <audio id="sound4">
-  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3">
+    </source>
   </audio>
 </head>
 
 <body>
-  <div class="container">
-      <div class="color-panel">
-        <div id="topLeft" class="quarter-circle top-left">
-        </div>
-        <div id="topRight" class="quarter-circle top-right">
-      </div>
-        <div id="bottomLeft" class="quarter-circle bottom-left">
-        </div>
-        <div id="bottomRight" class="quarter-circle bottom-right">
-        </div>
-        <div class="control-panel">
-          <div class="title"></div>
-          <div class="uppercase">
-            <div class="count" id="count"></div>
-            <h6>count<h6>
+  <!-- page-wrapper -->
+  <div class="page-wrapper">
+    <div class="init-wrapper">
+      <div class="container-game">
+        <div class="color-panel">
+          <div id="topLeft" class="quarter-circle top-left">
           </div>
-          <div class="switch-container">
-            <div class="inline uppercase switch-margin">
-              <input type="checkbox" class="on" id="on">
-              <h6>on</h6>
+          <div id="topRight" class="quarter-circle top-right">
+          </div>
+          <div id="bottomLeft" class="quarter-circle bottom-left">
+          </div>
+          <div id="bottomRight" class="quarter-circle bottom-right">
+          </div>
+          <div class="control-panel">
+            <div class="title"></div>
+            <div class="uppercase">
+              <div class="count" id="count"></div>
+              <h6>count<h6>
+            </div>
+            <div class="switch-container">
+              <div class="inline uppercase switch-margin">
+                <input type="checkbox" class="mute" id="mute">
+                <h6>mute</h6>
+              </div>
+              <div class="inline uppercase switch-margin">
+                <input type="checkbox" class="on" id="on">
+                <h6>on</h6>
+              </div>
+              <div class="inline uppercase">
+                <input type="checkbox" class="strict" id="strict">
+                <h6>strict</h6>
+              </div>
             </div>
             <div class="inline uppercase">
-              <input type="checkbox" class="strict" id="strict">
-              <h6>strict</h6>
+              <button class="button start" id="start"></button>
             </div>
-          </div>
-          <div class="inline uppercase">
-            <button class="button start" id="start"></button>
           </div>
         </div>
       </div>
+    </div>
+    <div class="push"></div>
   </div>
 
+  <footer>
+    <div class="container-footer text-center">
+      <p> Simon
+        <i class="far fa-copyright"></i> 2021 by Lucinda Souchet
+        <a href="https://github.com/sctlcd" target="_blank">
+          <i class="fab fa-github"></i>
+          <span class="sr-only">Github</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+
   <!-- script -->
+  <script src="https://kit.fontawesome.com/e576f39845.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="assets/js/simon-game.js"></script>
 
