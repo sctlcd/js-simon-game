@@ -1,8 +1,8 @@
-# [simon-game]()
+# [simon-game](https://sctlcd.github.io/simon-game-in-progress/)
 
 <img src="" alt="Match the memory" width="700">
 
-[Let's play!]()
+[Let's play!](https://sctlcd.github.io/simon-game-in-progress/)
 
 
 ---
@@ -65,7 +65,7 @@ Back to [top](#TableOfContents)
 
 ### Deployment – Run Locally <a name="Deploymentrunlocally"></a>
 
-1.	Again, click on the repository called [Match the memory](https://github.com/sctlcd/simon-game)
+1.	Again, click on the repository called [Simon game](https://github.com/sctlcd/simon-game)
 2.	Along the top bar, find the “clone or download” button.
 3.	Here you have the option to clone by HTTPS or SSH.
 4.	Once you have chose your desired option, then click the copy icon next to the URL.
@@ -86,8 +86,7 @@ Back to [top](#TableOfContents)
 Sources of the images used on this site:
 
 - From images sub-directory - [Github](https://github.com/sctlcd/simon-game/tree/master/assets/images)
-	- favicon.ico - [Flaticon](https://www.flaticon.com/free-icon/game_1138727?related_id=1138883&origin=search) | [Freepik](https://www.freepik.com)
-https://www.flaticon.com/free-icon/game_1138727?related_id=1138883&origin=search
+	- favicon.ico - [Flaticon](https://www.flaticon.com/free-icon/game_1138727?related_id=1138883&origin=search) | copyright [Freepik](https://www.freepik.com)
 
 Back to [top](#TableOfContents)
 
