@@ -1,8 +1,8 @@
-# [simon-game]()
+# [simon-game](https://sctlcd.github.io/simon-game-in-progress/)
 
 <img src="" alt="Match the memory" width="700">
 
-[Let's play!]()
+[Let's play!](https://sctlcd.github.io/simon-game-in-progress/)
 
 
 ---
