@@ -119,17 +119,18 @@ body {
 
 .start {
   text-align: center;
-  margin: 0px;
+  margin: auto;
   border: solid 3px black;
   width: 65px;
   height: 65px;
   border-radius: 50px;
   color: black;
   line-height: 50px;
+  padding: 5px;
 }
 
 .start {
-  background-color: #bb0a0a;
+  background-color: #c70000;
 }
 
 .strict, .on, .mute {
