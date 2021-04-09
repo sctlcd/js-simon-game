@@ -36,10 +36,10 @@ body {
 
 .color-panel {
   margin: auto;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   boder: solid 10px black;
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  /* height: 800px; */
   border-radius: 800px;
 }
 
@@ -83,7 +83,7 @@ body {
   z-index: 10;
   margin-top: 160px;
   margin-left: 160px;
-  box-shadow: -6px 8px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: -6px 8px 5px 0px rgba(29, 33, 36, 0.55);
 }
 
 .title {
