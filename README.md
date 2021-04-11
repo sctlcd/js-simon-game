@@ -1,15 +1,16 @@
-# [simon-game](https://sctlcd.github.io/simon-game-in-progress/)
+# [simon-game](https://sctlcd.github.io/simon-game/)
 
-<img src="" alt="Match the memory" width="700">
+<img src="https://github.com/sctlcd/simon-game/blob/master/assets/images/simon_desktop_website_mockup_min.png" alt="Match the memory" width="700">
 
-[Let's play!](https://sctlcd.github.io/simon-game-in-progress/)
-
+[Let's play!](https://sctlcd.github.io/simon-game/)
 
 ---
 
 # Table of Contents <a name="TableOfContents"></a>
 
 1. [About](#About)
+
+	- [How to play](#HowToPlay)
 
 2. [Technologies Used](#TechnologiesUsed)
 
@@ -30,12 +31,32 @@
 
 Desktop version of Simon game.
 
+### How to play <a name="HowToPlay"></a>
+- 1/ Switch to ON. The counter displays 0.
+- 2/ MUTE and STRICT are switched to OFF
+- 3/ Press the START button. Simon will give the first signal (light and sound). Repeat the signal by pressing the same color lens.
+- 4/ Simon will duplicate the 1st signal and add one. Repeat these 2 signals by pressing the same color lenses, in order.
+- 5/ Simon will duplicate these first 2 signals and add 1.
+- 6/ If the player fails to repeat a sequence exactly, Simon responds with an error sound and the counter will display "NO". This means you've failed to repeat the sequence exactly. Simon will then repeat the sequence.
+- 7/ If you success to repeat exactly the sequence of 3 signals, Simon will maintain all color lenses flashed at the same time and the counter will display "WIN". The game ends.
+
+mute button: if selected the game is mute. <br />
+strict button: if selected and if the player fails to repeat a sequence exactly the game starts over with a new sequence.
+
+Back to [top](#TableOfContents)
+
+ ---
+
 ## Technologies Used <a name="TechnologiesUsed"></a>
 
 - [GitHub](https://github.com/) - Used as remote storage of my code online.
 - [Atom](https://atom.io/) - Used as a local IDE.
 - [Compressjpeg](https://compressjpeg.com/) - Used to compress images for loading faster
 - [Techsini](https://techsini.com/multi-mockup/) - Used to generate multi-device website mockup
+
+Back to [top](#TableOfContents)
+
+ ---
 
 ##### Front-End Technologies <a name="Front-end-technologies"></a>
 

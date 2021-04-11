@@ -36,10 +36,7 @@ body {
 
 .color-panel {
   margin: auto;
-  /* margin-top: 70px; */
-  boder: solid 10px black;
   width: 700px;
-  /* height: 800px; */
   border-radius: 800px;
 }
 

@@ -151,7 +151,7 @@ $(document).ready(function() {
       game.matched = true;
 
       for (let i = 0; i < 20; i++) {
-        random = Math.floor(Math.random() * 4) + 1
+        random = Math.floor(Math.random() * 4) + 1;
         game.gameSequence.push(random);
       }
 
@@ -249,11 +249,11 @@ $(document).ready(function() {
       if (game.matched === false) {
         game.flashColor();
         countButton.innerHTML = "NO";
-        setTimeout( () => {
+        setTimeout(() => {
           if (!game.mute) {
             error.play();
           }
-        }, 500)
+        }, 500);
 
         setTimeout(() => {
           countButton.innerHTML = game.level;
@@ -269,7 +269,7 @@ $(document).ready(function() {
             countButton.innerHTML = game.level;
             intervalId = setInterval(game.gameRound, 800);
           }
-        }, 1100)
+        }, 1100);
       }
 
       if (game.level === game.playerSequence.length && game.matched && !game.win) {
@@ -298,7 +298,7 @@ $(document).ready(function() {
       game.on = false;
       game.win = true;
     },
-  }
+  };
 
   game.init();
 
