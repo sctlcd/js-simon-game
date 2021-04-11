@@ -15,6 +15,11 @@ $(document).ready(function() {
   const sound3 = document.getElementById('sound3');
   const sound4 = document.getElementById('sound4');
   const error = document.getElementById('error');
+  const blue = "#00006e";
+  const red = "#6c0101";
+  const yellow = "#a37400";
+  const green = "#005900";
+  const darkyellow = "#d29600";
 
   //game namespace/scope
   let game = {
@@ -136,7 +141,7 @@ $(document).ready(function() {
       }
     },
 
-    // The game starts
+    // Starts the game
     play: function() {
       game.resetGame();
       game.level++;
@@ -187,59 +192,51 @@ $(document).ready(function() {
     one: function() {
       if (!game.mute) {
         sound1.play();
-        game.mute = false;
-      } else {
-        game.mute = true;
       }
       topRight.style.backgroundColor = "darkblue";
     },
 
+    // Light and sound if 2 in the game Sequence
     two: function() {
       if (!game.mute) {
         sound2.play();
-        game.mute = false;
-      } else {
-        game.mute = true;
       }
-      bottomRight.style.backgroundColor = "#d29600";
+      bottomRight.style.backgroundColor = darkyellow;
     },
 
+    // Light and sound if 3 in the game Sequence
     three: function() {
       if (!game.mute) {
         sound3.play();
-        game.mute = false;
-      } else {
-        game.mute = true;
       }
       bottomLeft.style.backgroundColor = "darkred";
     },
 
+    // Light and sound if 4 in the game Sequence
     four: function() {
       if (!game.mute) {
         sound4.play();
-        game.mute = false;
-      } else {
-        game.mute = true;
       }
       topLeft.style.backgroundColor = "darkgreen";
     },
 
+    // Clear initial colors
     clearColor: function() {
-      topRight.style.backgroundColor = "#00006e";
-      bottomRight.style.backgroundColor = "#a37400";
-      bottomLeft.style.backgroundColor = "#6c0101";
-      topLeft.style.backgroundColor = "#005900";
+      topRight.style.backgroundColor = blue;
+      bottomRight.style.backgroundColor = yellow;
+      bottomLeft.style.backgroundColor = red;
+      topLeft.style.backgroundColor = green;
     },
 
+    // Flash colors
     flashColor: function() {
       topRight.style.backgroundColor = "darkblue";
-      bottomRight.style.backgroundColor = "#d29600";
+      bottomRight.style.backgroundColor = darkyellow;
       bottomLeft.style.backgroundColor = "darkred";
       topLeft.style.backgroundColor = "darkgreen";
     },
 
-    //
-    // matched is true is the player has everything correct and false if the player selected something wrong
+    // Matched is true is the player has everything correct and false if the player selected something wrong
     checkForMatch: function() {
       if (game.gameSequence[game.playerSequence.length - 1] !== game.playerSequence[game.playerSequence.length - 1]) {
         game.matched = false;
@@ -252,7 +249,12 @@ $(document).ready(function() {
       if (game.matched === false) {
         game.flashColor();
         countButton.innerHTML = "NO";
-        error.play();
+        setTimeout( () => {
+          if (!game.mute) {
+            error.play();
+          }
+        }, 500)
+
         setTimeout(() => {
           countButton.innerHTML = game.level;
           game.clearColor();
@@ -267,9 +269,7 @@ $(document).ready(function() {
             countButton.innerHTML = game.level;
             intervalId = setInterval(game.gameRound, 800);
           }
-        }, 800)
-
-        game.mute = true;
+        }, 1100)
       }
 
       if (game.level === game.playerSequence.length && game.matched && !game.win) {
@@ -282,6 +282,7 @@ $(document).ready(function() {
       }
     },
 
+    // Play the computer sequence
     playComputerSequence: function() {
       game.playerSequence = [];
       game.computerRound = true;
@@ -290,6 +291,7 @@ $(document).ready(function() {
       intervalId = setInterval(game.gameRound, 800);
     },
 
+    // Win the game
     winGame: function() {
       game.flashColor();
       countButton.innerHTML = "WIN";
