@@ -14,6 +14,7 @@ $(document).ready(function() {
   const sound2 = document.getElementById('sound2');
   const sound3 = document.getElementById('sound3');
   const sound4 = document.getElementById('sound4');
+  const error = document.getElementById('error');
 
   //game namespace/scope
   let game = {
@@ -251,6 +252,7 @@ $(document).ready(function() {
       if (game.matched === false) {
         game.flashColor();
         countButton.innerHTML = "NO";
+        error.play();
         setTimeout(() => {
           countButton.innerHTML = game.level;
           game.clearColor();
