@@ -1,6 +1,6 @@
 # [simon-game](https://sctlcd.github.io/simon-game/)
 
-<img src="https://github.com/sctlcd/simon-game/blob/master/assets/images/simon_desktop_website_mockup_min.png" alt="Match the memory" width="700">
+<img src="https://github.com/sctlcd/simon-game/blob/master/assets/images/simon_desktop_website_mockup_min.png" alt="Simon Game" width="700">
 
 [Let's play!](https://sctlcd.github.io/simon-game/)
 
